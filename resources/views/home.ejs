@@ -1,206 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Realtime Drink App</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Oswald:wght@300&display=swap"
-        rel="stylesheet">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/card.css">
-</head>
-
-<body>
-
-    <nav class="container mx-auto flex items-center justify-between py-4">
-        <div>
-            <img src="/img/logo.png" alt="logo" width="70px">
-            <h3>ChillBuddy</h3>
+<section class="hero">
+    <div class="card">
+        <div class="circle"></div>
+        <div class="content">
+            <h2>Pepsi</h2>
+            <h3>Zero Sugar</h3>
+            <p>
+                Pepsi Zero Sugar is the only soda with zero caleries and maximum pepsi taste!
+            </p>
+            <a href="">Buy Now</a>
         </div>
-
-        <div>
-            <ul class="flex items-center">
-                <li class="ml-6"><a href="#">Menu</a></li>
-                <li class="ml-6"><a href="#">Offer</a></li>
-                <li class="ml-6"><a href="#">Register</a></li>
-                <li class="ml-6"><a href="#">Login</a></li>
-                <li class="ml-6"><a href="#" class="inline-block px-4 py-2 rounded-full"><img src="/img/cart.png"
-                            alt="cart" width="25px"></a></li>
-            </ul>
+        <img src="/img/pepsi.png" alt="">
+    </div>
+    <div class="card">
+        <div class="circle1"></div>
+        <div class="content">
+            <h2>Fanta</h2>
+            <h3>Caffeine Free</h3>
+            <p>
+                Bright, bubbly, instantly refreshing and great tasting. Fanta is made with 100% natural flavours and
+                is caffeine free. Fanta is available in a variety of real fruit flavours.
+            </p>
+            <a href="">Buy Now</a>
         </div>
-    </nav>
-    <section class="hero">
-        <div class="card">
-            <div class="circle"></div>
-            <div class="content">
-                <h2>Pepsi</h2>
-                <h3>Zero Sugar</h3>
-                <p>
-                    Pepsi Zero Sugar is the only soda with zero caleries and maximum pepsi taste!
-                </p>
-                <a href="">Buy Now</a>
-            </div>
-            <img src="/img/pepsi.png" alt="">
+        <div class="fanta">
+            <img src="/img/fanta.png" alt="">
         </div>
-        <div class="card">
-            <div class="circle1"></div>
-            <div class="content">
-                <h2>Fanta</h2>
-                <h3>Caffeine Free</h3>
-                <p>
-                    Bright, bubbly, instantly refreshing and great tasting. Fanta is made with 100% natural flavours and
-                    is caffeine free. Fanta is available in a variety of real fruit flavours.
-                </p>
-                <a href="">Buy Now</a>
-            </div>
-            <div class="fanta">
-                <img src="/img/fanta.png" alt="">
-            </div>
+    </div>
+    <div class="card">
+        <div class="circle2"></div>
+        <div class="content">
+            <h2>Coca-Cola</h2>
+            <h3>Zero</h3>
+            <p>
+                Coke Zero does not contain any calories or sugar and is not a significant source of nutrients. It’s
+                sweetened with artificial sweeteners, which have controversial health effects.
+
+
+            </p>
+            <a href="">Buy Now</a>
         </div>
-        <div class="card">
-            <div class="circle2"></div>
-            <div class="content">
-                <h2>Coca-Cola</h2>
-                <h3>Zero</h3>
-                <p>
-                    Coke Zero does not contain any calories or sugar and is not a significant source of nutrients. It’s
-                    sweetened with artificial sweeteners, which have controversial health effects.
+        <div class="coca">
 
-
-                </p>
-                <a href="">Buy Now</a>
-            </div>
-            <div class="coca">
-
-                <img src="/img/cocacola1.png" alt="">
-            </div>
+            <img src="/img/cocacola1.png" alt="">
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Section For Menu -->
-    <section class="menu container mx-auto py-8">
-        <h2 class="text-xl font-bold mb-8">All Drinks</h2>
-        <div class="grid grid-cols-4 col-gap-12 row-gap-16">
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/coca.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Coca-Cola</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/fanta.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Fanta</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/7up.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">7Up</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/fantag.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Fanta Grap</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/light.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Coca-Cola light</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/monster.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Monster</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/pepsi1.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Pepsi</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img class="h-40 mb-4 mx-auto" src="/img/sprite.png" alt="">
-                <div>
-                    <h2 class="mb-4 text-xl">Sprite</h2>
-                    <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                    <div class="flex items-center justify-around mt-6">
-                    <span class="font-bold text-lg">₹250</span>
-                        <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                            <span>+</span>
-                            <span class="ml-4">Add</span>
-                        </button>
-                    </div>
+<!-- Section For Menu -->
+<section class="menu container mx-auto py-8">
+    <h2 class="text-xl font-bold mb-8">All Drinks</h2>
+    <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/coca.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Coca-Cola</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
                 </div>
             </div>
         </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/fanta.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Fanta</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/7up.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">7Up</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/fantag.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Fanta Grap</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/light.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Coca-Cola light</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/monster.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Monster</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/pepsi1.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Pepsi</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <img class="h-40 mb-4 mx-auto" src="/img/sprite.png" alt="">
+            <div>
+                <h2 class="mb-4 text-xl">Sprite</h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
+                <div class="flex items-center justify-around mt-6">
+                <span class="font-bold text-lg">₹250</span>
+                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                        <span>+</span>
+                        <span class="ml-4">Add</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    </section>
-
-    <script src="/js/app.js"></script>
-</body>
-
-</html>
+</section>

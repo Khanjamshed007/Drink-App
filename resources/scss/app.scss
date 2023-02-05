@@ -36,3 +36,30 @@ nav li a{
         color: $pure;
     }
 }
+.btn{
+    background: $primary;
+}
+section.cart{
+    background: $secondary;
+
+    .amount{
+        color: $primary-hover;
+    }
+    .order button{
+        background: $primary-hover;
+
+        &:hover{
+            background: $primary;
+        }
+    }
+    img{
+        mix-blend-mode: darken;
+    }
+    .login{
+        background: $primary-hover;
+
+        &:hover{
+            background: $primary;
+        }
+    }
+}

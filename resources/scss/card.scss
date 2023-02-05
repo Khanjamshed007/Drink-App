@@ -1,3 +1,6 @@
+
+@import "./variable";
+
 .hero {
    background: #f8f8f8;
 }
@@ -100,6 +103,10 @@
     left: 0;
     opacity: 1;
     visibility: visible;
+}
+.content a:hover{
+    transform: scaleX(1.2);
+    transition: $smooth;
 }
 
 // for second card image

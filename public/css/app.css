@@ -37,3 +37,29 @@ nav li a:hover {
   border-color: #fff;
   color: #fff;
 }
+
+.btn {
+  background: rgb(124, 124, 235);
+}
+
+section.cart {
+  background: #f8f8f8;
+}
+section.cart .amount {
+  color: rgb(60, 60, 242);
+}
+section.cart .order button {
+  background: rgb(60, 60, 242);
+}
+section.cart .order button:hover {
+  background: rgb(124, 124, 235);
+}
+section.cart img {
+  mix-blend-mode: darken;
+}
+section.cart .login {
+  background: rgb(60, 60, 242);
+}
+section.cart .login:hover {
+  background: rgb(124, 124, 235);
+}

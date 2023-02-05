@@ -103,6 +103,11 @@
   visibility: visible;
 }
 
+.content a:hover {
+  transform: scaleX(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
 .circle1 {
   position: absolute;
   top: 0;
