@@ -6,13 +6,19 @@
   -dev dependancies
     -nodemon
 3.create express server -create a sever.js file
-4.create home page using html and css
+4.git setup and first commit
+5.install larvel mix
+  -setup js and scss
+6.install tailwind css
+7.create home page using html and css
   -include tailwind css
-5.create cart page
+8.create cart page
   -order summary section
   -empty cart section
-5.create order controller and link it in sever.js
-6.create order view path table for customer and admin
-7.create order single page with status
-8.create login page with route    
+9.create order controller and link it in sever.js
+10.create order view path table for customer and admin
+11.create order single page with status
+12.create login page with route 
+13.create register page with route
+14.build register crud
 

@@ -5,6 +5,11 @@ const path=require('path');
 const ejsLayout=require('express-ejs-layouts');
 const port=process.env.port || 8000;
 
+
+// Assests from css and js
+app.use(express.static('public'));
+
+
 app.get('/',(req,res)=>{
     res.render("home");
 })
