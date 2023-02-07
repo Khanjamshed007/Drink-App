@@ -1,0 +1,72 @@
+[{
+    "_id":{
+        "$oid":"5eee651f739f8c674fd736ee"
+    },
+    "name":"Coca-Cola",
+    "image":"coca.png",
+    "price":"250",
+    "special":"Zero Sugar"
+},{
+    "_id":{
+        "$oid":"5eee6671a27a66807cf2bea3"
+    },
+    "name":"Fanta",
+    "image":"fanta.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+},{
+    "_id":{
+        "$oid":"5eee6692a27a66807cf2bea4"
+    },
+    "name":"7Up",
+    "image":"7up.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+},{
+    "_id":{
+        "$oid":"5eee66a5a27a66807cf2bea5"
+    },
+    "name":"Fanta Grap",
+    "image":"fantag.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+},{
+    "_id":{
+        "$oid":"5eee66c4a27a66807cf2bea6"
+    },
+    "name":"Coca-Cola light",
+    "image":"light.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+},{
+    "_id":{
+        "$oid":"5eee66cfa27a66807cf2bea7"
+    },
+    "name":"Monster",
+    "image":"monster.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+},{
+    "_id":{
+        "$oid":"5eee66eea27a66807cf2bea8"
+    },
+    "name":"Pepsi",
+    "image":"pepsi1.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+},{
+    "_id":{
+        "$oid":"5eee6717a27a66807cf2bea9"
+    },
+    "name":"Sprite",
+    "image":"sprite.png",
+    "price":"250",
+    "special":"Zero Sugar"
+
+}]

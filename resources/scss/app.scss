@@ -1,6 +1,8 @@
 @import "./variable";
+@import "~noty/src/noty.scss";
+@import "~noty/src/themes/mint.scss";
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,52 +16,83 @@ nav li:last-child a {
     background: $primary;
     &:hover {
         background: $primary-hover;
+        transform: scale(1.2);
     }
 }
-nav li a{
+nav li a {
     transition: $smooth;
     &:hover {
         color: $primary-hover;
     }
 }
 
-.size{
+.size {
     background: $secondary;
 }
-.add-to-cart{
+.add-to-cart {
     border: 2px solid $primary-hover;
     color: $primary-hover;
     transition: $smooth;
-    &:hover{
+    &:hover {
         background: $primary;
         border-color: $pure;
         color: $pure;
+        transform: scale(1.2);
+    }
+    &:focus{
+        outline: none;
     }
 }
-.btn{
+.btn {
     background: $primary;
 }
-section.cart{
+section.cart {
     background: $secondary;
 
-    .amount{
+    .amount {
         color: $primary-hover;
     }
-    .order button{
+    .order button {
         background: $primary-hover;
 
-        &:hover{
+        &:hover {
             background: $primary;
+
         }
     }
-    img{
+    img {
         mix-blend-mode: darken;
     }
-    .login{
+    .login {
         background: $primary-hover;
 
-        &:hover{
+        &:hover {
             background: $primary;
         }
     }
+}
+.social::before {
+    content: "";
+    width: 150px;
+    height: 2px;
+    display: block;
+    background: #ded0d0;
+    position: absolute;
+    top: 38.3rem;
+    left: 36%;
+}
+.social::after {
+    content: "";
+    width: 150px;
+    height: 2px;
+    display: block;
+    background: #ded0d0;
+    position: absolute;
+    top: 38.3rem;
+    right: 36%;
+}
+.noty_theme__mint{
+    border-radius: 50px!important;
+    padding-left: 8px!important;
+    font-weight: bold !important;
 }

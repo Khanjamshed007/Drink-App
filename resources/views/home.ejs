@@ -50,118 +50,27 @@
 <section class="menu container mx-auto py-8">
     <h2 class="text-xl font-bold mb-8">All Drinks</h2>
     <div class="grid grid-cols-4 col-gap-12 row-gap-16">
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/coca.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Coca-Cola</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
+        <% drinks.forEach(function(drink){%>
+            <div class="text-center w-64">
+                <img class="h-40 mb-4 mx-auto" src="/img/<%=drink.image%>" alt="">
+                <div>
+                    <h2 class="mb-4 text-xl">
+                        <%=drink.name%>
+                    </h2>
+                    <span class="size py-1 px-4 rounded-full uppercase text-xs">
+                        <%=drink.special%>
+                    </span>
+                    <div class="flex items-center justify-around mt-6">
+                        <span class="font-bold text-lg">₹<%=drink.price%></span>
+                        <button data-drink="<%= JSON.stringify(drink) %>"
+                            class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                            <span>+</span>
+                            <span class="ml-4">Add</span>
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/fanta.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Fanta</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/7up.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">7Up</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/fantag.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Fanta Grap</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/light.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Coca-Cola light</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/monster.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Monster</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/pepsi1.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Pepsi</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="text-center">
-            <img class="h-40 mb-4 mx-auto" src="/img/sprite.png" alt="">
-            <div>
-                <h2 class="mb-4 text-xl">Sprite</h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs">Zero Sugar</span>
-                <div class="flex items-center justify-around mt-6">
-                <span class="font-bold text-lg">₹250</span>
-                    <button class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
-                        <span>+</span>
-                        <span class="ml-4">Add</span>
-                    </button>
-                </div>
-            </div>
-        </div>
+            <% })%>
     </div>
 
 </section>
