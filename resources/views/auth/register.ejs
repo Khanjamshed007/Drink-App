@@ -12,32 +12,39 @@
                         trial</a>
                 </p> -->
             </div>
-            <form class="mt-8 space-y-6" action="#" method="POST">
+            <form class="form mt-8 space-y-6" action="/register" method="POST">
                 <input type="hidden" name="remember" value="true">
                 <div class="-space-y-px rounded-md shadow-sm">
-                    <div>
-                        <label for="email-address" class="sr-only">Name</label>
-                        <input id="email-address" name="name" type="text" autocomplete="email" required
+                    <%if(messages.error){%>
+                    <span class="text-red-500 text-sm"><%=messages.error%></span>
+                    <%}%>
+                    <div class="input">
+                        <label for="Name" class="sr-only">Name</label>
+                        <input id="Name" name="name" type="text" autocomplete="name"  value="<%=messages.name%>"
                             class="relative block w-full appearance-none mb-6 rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                             placeholder="Enter Your Name">
+                            <div class="error"></div>
                     </div>
-                    <div>
+                    <div class="input">
                         <label for="email-address" class="sr-only">Email address</label>
-                        <input id="email-address" name="email" type="email" autocomplete="email" required
+                        <input id="email-address" name="email" type="email" autocomplete="email" value="<%=messages.email%>"
                             class="relative block w-full appearance-none mb-6 rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                             placeholder="Email address">
+                            <div class="error"></div>
                     </div>
-                    <div>
+                    <div class="input">
+                        <label for="phone" class="sr-only">Phone Number</label>
+                        <input id="phone" name="phone" type="phone" autocomplete="phone" value="<%=messages.phone%>"
+                            class="relative block w-full appearance-none mb-6 rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                            placeholder="Enter Your Phone Number">
+                            <div class="error"></div>
+                    </div>
+                    <div class="input">
                         <label for="password" class="sr-only">Password</label>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required
+                        <input id="password" name="password" type="password" autocomplete="current-password" 
                             class="relative block w-full appearance-none mb-6 rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
                             placeholder="Password">
-                    </div>
-                    <div>
-                        <label for="password" class="sr-only">Confirm Password</label>
-                        <input id="password" name="password" type="password" autocomplete="current-password" required
-                            class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                            placeholder="Confirm Password">
+                            <div class="error"></div>
                     </div>
                 </div>
 
@@ -64,7 +71,7 @@
                         </span>
                         Sign Up
                     </button>
-                    <button type="submit"
+                    <button type="button"
                         class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
                         <span class="absolute inset-y-0 left-0 flex items-center pl-3">
                             <!-- Heroicon name: mini/lock-closed -->

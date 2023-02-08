@@ -3,13 +3,13 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 const path = require('path');
-const ejsLayout = require('express-ejs-layouts');
-const exrpessSession = require('express-session');
+const ejsLayout = require('express-ejs-layouts'); 
 const port = process.env.port || 8000;
 const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('express-flash');
 const MongoDbStore = require('connect-mongo')(session);
+const passport=require('passport');
 
 // Database Connection
 mongoose.set('strictQuery', true);
@@ -38,20 +38,31 @@ app.use(session({
 
 }))
 
+// passport Config
+const passportInit=require('./app/config/passport');
+passportInit(passport);
+app.use(passport.initialize());
+app.use(passport.session());
+
 // using Express Flash
 app.use(flash());
 
 // Assests from css and js
 app.use(express.static('public'));
 
-// Using Session global middleware
-app.use((req,res,next)=>{
-    res.locals.session=req.session;
-    next()
-})
+// Using urlencoded
+app.use(express.urlencoded({extended:false}));
 
 // Using json in express
 app.use(express.json());
+
+// Using Session global middleware
+app.use((req,res,next)=>{
+    res.locals.session=req.session;
+    res.locals.user=req.user;
+    next()
+})
+
 
 // Set the template engine
 app.use(ejsLayout);
