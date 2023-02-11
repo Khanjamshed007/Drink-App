@@ -8,6 +8,14 @@ function authController() {
             res.render('auth/login');
         },
         postLogin(req, res, next) {
+
+            const { email, password } = req.body
+            if (!email|| !password) {
+
+                req.flash('error', 'All Fields are required ');
+                return res.redirect('/login')
+            }
+
             passport.authenticate('local', (err, user, info) => {
                 if (err) {
                     req.flash('error', info.message);
@@ -32,6 +40,7 @@ function authController() {
         },
         async postRegister(req, res) {
             const { name, email, phone, password } = req.body;
+            // validate request
             if (!name || !email || !phone || !password) {
 
                 req.flash('error', 'All Fields are required ');
@@ -81,8 +90,6 @@ function authController() {
             });
         }
     }
-
-
 }
 
 module.exports = authController
