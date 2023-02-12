@@ -1,7 +1,9 @@
 // importing axios from node module file
+
 import axios from 'axios';
 import { message } from 'laravel-mix/src/Log';
 import Noty from 'noty';
+import{ initAdmin } from './admin.js'
 
 let addtocart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
@@ -41,8 +43,16 @@ addtocart.forEach((btn) => {
     })
 })
 
+// Removing alert message after X seconds
+const alertMsg=document.querySelector('#success-alert')
+    if(alertMsg){
+        setTimeout(() => {
+            alertMsg.remove()
+        }, 3000);
+    }
 
-
+// calling the admin js
+initAdmin()
 
 
 // For validation if the user put wrong input

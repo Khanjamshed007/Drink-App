@@ -337,3 +337,12 @@ section.cart .login:hover {
   padding-left: 8px !important;
   font-weight: bold !important;
 }
+
+.gif {
+  width: 30px;
+  height: 25px;
+}
+
+a.link {
+  color: rgb(60, 60, 242);
+}
