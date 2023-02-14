@@ -21,4 +21,20 @@
 12.create login page with route 
 13.create register page with route
 14.build register crud
+ -dependancies express-flash express-session dotenv
+ -status code articele https://www.restapitutorial.com/httpstatuscodes.html
 
+15.Bulid login using passport
+  -install dependancie passport passport-local expresss-session
+16.Create order controller and link it in server.js
+17.create order views with table for customer and admin
+18.place order functionality
+19.show all my orders on customer orders Page
+20.show Orders on admin Page
+21.Create orders single page with status
+22.order tracker
+  -dependancie moment
+23.socket connection
+  -dependancie socket.in
+24.bulid project for development
+25.deploy project on live server    

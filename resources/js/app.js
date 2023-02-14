@@ -1,9 +1,9 @@
 // importing axios from node module file
 
 import axios from 'axios';
-import { message } from 'laravel-mix/src/Log';
+import moment from 'moment';
 import Noty from 'noty';
-import{ initAdmin } from './admin.js'
+import { initAdmin } from './admin.js'
 
 let addtocart = document.querySelectorAll('.add-to-cart')
 let cartCounter = document.querySelector('#cartCounter')
@@ -18,18 +18,18 @@ function updateCart(drink) {
     axios.post('/update-cart', drink).then(res => {
         cartCounter.innerText = res.data.totalQty;
         new Noty({
-            type:'success',
+            type: 'success',
             text: 'Added To Cart',
-            timeout:500,
-            progressBar:false
+            timeout: 500,
+            progressBar: false
 
         }).show();
-    }).catch(err =>{
+    }).catch(err => {
         new Noty({
-            type:'error',
+            type: 'error',
             text: 'somthing Went Wrong',
-            timeout:500,
-            progressBar:false
+            timeout: 500,
+            progressBar: false
 
         }).show();
     })
@@ -44,15 +44,95 @@ addtocart.forEach((btn) => {
 })
 
 // Removing alert message after X seconds
-const alertMsg=document.querySelector('#success-alert')
-    if(alertMsg){
-        setTimeout(() => {
-            alertMsg.remove()
-        }, 3000);
-    }
+const alertMsg = document.querySelector('#success-alert')
+if (alertMsg) {
+    setTimeout(() => {
+        alertMsg.remove()
+    }, 3000);
+}
 
 // calling the admin js
-initAdmin()
+
+
+// changing the order status
+let status = document.querySelectorAll('.status-line')
+let hiddenInput = document.querySelector('#hiddenInput');
+let order = hiddenInput ? hiddenInput.value : null;
+order = JSON.parse(order);
+let time = document.createElement('small')
+
+
+function updateStatus(order) {
+status.forEach((status) =>{
+    status.classList.remove('step-completed');
+    status.classList.remove('current-status');
+})
+    let stepCompleted = true;
+    status.forEach((status) => {
+        let dataProp = status.dataset.status
+
+        if (stepCompleted) {
+            status.classList.add('step-completed')
+        }
+
+        if (dataProp === order.status) {
+            stepCompleted = false;
+            time.innerText = moment(order.updatedAt).format('hh:mm A')
+            status.appendChild(time);
+            if (status.nextElementSibling) {
+                status.nextElementSibling.classList.add('current-status')
+            }
+        }
+    })
+    
+}
+
+updateStatus(order);
+
+// Socket
+let socket = io()
+initAdmin(socket)
+// join
+if (order) {
+    socket.emit('join', `order_${order._id}`)
+}
+
+// For Admin page
+const adminPath=window.location.pathname;
+console.log(adminPath)
+
+if(adminPath.includes('admin')){
+    socket.emit('join','adminRoom')
+}
+
+socket.on('orderupdated', (data) => {
+    const updatedOrder = { ...order }
+    updatedOrder.updatedAt = moment().format()
+    updatedOrder.status = data.status
+    updateStatus(updatedOrder);
+    new Noty({
+        type: 'success',
+        text: 'Order Updated',
+        timeout: 500,
+        progressBar: false
+
+    }).show();
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // For validation if the user put wrong input
@@ -63,7 +143,7 @@ initAdmin()
 //     validinput();
 // });
 
-// // for set the error 
+// // for set the error
 // const setError = (element,message) =>{
 //     const inputControl=element.parentElement;
 //     const errorDisplay=inputControl.querySelector('.error');
@@ -72,7 +152,7 @@ initAdmin()
 //     inputControl.classList.add('error');
 // }
 
-// // for remove the error 
+// // for remove the error
 // const success = element =>{
 //     const inputControl=element.parentElement;
 //     const errorDisplay=inputControl.querySelector('.error');

@@ -2,7 +2,7 @@ import axios from 'axios'
 import Noty from 'noty'
 import moment from 'moment'
 
-function initAdmin() {
+function initAdmin(socket) {
     const orderTableBody = document.querySelector('#orderTableBody');
     let orders = []
     let markup
@@ -19,7 +19,15 @@ function initAdmin() {
         console.log(err)
     })
 
-    
+    // calling the renderItems function
+    function renderItems(items) {
+        let parsedItems = Object.values(items);
+        return parsedItems.map((menuItem) => {
+            return `
+            <p>${menuItem.item.name} - ${menuItem.qty} pcs </p>`
+        }).join('')
+    }
+
     // calling the markup function
     function generateMarkup(orders) {
         return orders.map(order => {
@@ -39,9 +47,9 @@ function initAdmin() {
                 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                 <option value="order_placed" ${order.status === 'order_placed' ? 'selected' : ''}>Placed</option>
                 <option value="confirmed" ${order.status === 'confirmed' ? 'selected' : ''}>Confirmed</option>
-                <option value="ontheway" ${order.status === 'ontheway' ? 'selected' : ''}>On th Way</option>
-                <option value="delivered" ${order.status === 'delivered' ? 'selected' : ''}>Delivered</option>
-                <option value="completed" ${order.status === 'completed' ? 'selected' : ''}>Completed</option>
+                <option value="On The Way" ${order.status === 'On The Way' ? 'selected' : ''}>On the Way</option>
+                <option value="Delivered" ${order.status === 'Delivered' ? 'selected' : ''}>Delivered</option>
+                <option value="Completed" ${order.status === 'Completed' ? 'selected' : ''}>Completed</option>
                 </select>
                 </form>
                 <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
@@ -54,17 +62,22 @@ function initAdmin() {
                 ${moment(order.createdAt).format('Do MMMM YYYY , hh:mm A')}
                 </td >
                 </tr > `
-            }).join('')
-    }
-    
-    // calling the renderItems function
-    function renderItems(items) {
-        let parsedItems = Object.values(items);
-        return parsedItems.map((menuItem) => {
-            return `
-            <p>${menuItem.item.name} - ${menuItem.qty} pcs </p>`
         }).join('')
     }
+
+    socket.on('orderPlaced',(order)=>{
+        new Noty({
+            type: 'success',
+            text: 'New Order Placed',
+            timeout: 500,
+            progressBar: false
+    
+        }).show();
+        orders.unshift(order)
+        orderTableBody.innerHTML=''
+        orderTableBody.innerHTML=generateMarkup(orders)
+    })
+
 }
 
 export { initAdmin }

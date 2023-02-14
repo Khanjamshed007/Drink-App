@@ -8,6 +8,7 @@ const orderController=require('../app/http/controllers/customer/orderController'
 
 // Admin Controller
 const AdminOrderController=require('../app/http/controllers/admin/ordercontroller');
+const statusController=require('../app/http/controllers/admin/statusController');
 
 
 // Middlewares
@@ -47,10 +48,16 @@ app.post('/update-cart',cartController().update);
 // Rendering the order page
 app.post('/order',auth,orderController().store);
 app.get('/customer/order',auth,orderController().index);
+app.get('/customer/order/:id',auth,orderController().showStatus);
 
 
 // Admin Routes
+
+// For Admin Order page
 app.get('/admin/order',admin,AdminOrderController().index);
+
+// For admin Status Page
+app.post('/admin/order/status',admin,statusController().statusupdate);
 
 }
 module.exports=initRoutes
