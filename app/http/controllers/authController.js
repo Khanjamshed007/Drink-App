@@ -4,7 +4,7 @@ const passport = require('passport');
 
 function authController() {
     const _getRedirect = (req) => {
-        return req.user.role ==='admin' ? '/admin/order' :'/customer/order'
+        return req.user.role ==='admin' ? '/admin/order' :'/'
 }
 
     return {
