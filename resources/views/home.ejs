@@ -1,6 +1,8 @@
 <section class="hero">
-    <div class="card">
-        <div class="circle"></div>
+    <div class="container12">
+
+        <div class="card">
+            <div class="circle"></div>
         <div class="content">
             <h2>Pepsi</h2>
             <h3>Zero Sugar</h3>
@@ -34,24 +36,24 @@
             <p>
                 Coke Zero does not contain any calories or sugar and is not a significant source of nutrients. It’s
                 sweetened with artificial sweeteners, which have controversial health effects.
-
+                
 
             </p>
             <a href="">Buy Now</a>
         </div>
         <div class="coca">
-
             <img src="/img/cocacola1.png" alt="">
         </div>
     </div>
+</div>
 </section>
 
 <!-- Section For Menu -->
 <section class="menu container mx-auto py-8">
     <h2 class="text-xl font-bold mb-8">All Drinks</h2>
-    <div class="grid grid-cols-4 col-gap-12 row-gap-16">
+    <div class="grid xl:grid-cols-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 col-gap-12 row-gap-16">
         <% drinks.forEach(function(drink){%>
-            <div class="text-center w-64">
+            <div class="w-full md:w-64 text-center">
                 <img class="h-40 mb-4 mx-auto" src="/img/<%=drink.image%>" alt="">
                 <div>
                     <h2 class="mb-4 text-xl">
@@ -60,10 +62,10 @@
                     <span class="size py-1 px-4 rounded-full uppercase text-xs">
                         <%=drink.special%>
                     </span>
-                    <div class="flex items-center justify-around mt-6">
+                    <div class="flex items-center justify-evenly mt-6">
                         <span class="font-bold text-lg">₹<%=drink.price%></span>
                         <button data-drink="<%= JSON.stringify(drink) %>"
-                            class="add-to-cart py-1 px-6 rounded-full flex items-center font-bold ml-6">
+                            class="add-to-cart py-1 px-4 rounded-full flex items-center font-bold ml-6">
                             <span>+</span>
                             <span class="ml-4">Add</span>
                         </button>

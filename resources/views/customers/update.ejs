@@ -1,0 +1,10 @@
+<form action="" enctype="multipart/form-data" method="POST">
+    <input type="hidden" name="user_id"value="<%=user.id%>">
+    <input type="text" name="name" placeholder="Enter Your Name" value="<%=user.name%>" required>
+    <input type="email" name="email" placeholder="Enter Your Email" value="<%=user.email%>" required>
+    <input type="phone" name="phone" placeholder="Enter Your Name" value="<%=user.phone%>"
+        required>
+    <input type="file" name="avatar" placeholder="Profile Picture">
+    <input type="submit" value="Update" class="update">
+    <!-- <input type="submit" value="Update" class="update"> -->
+</form>

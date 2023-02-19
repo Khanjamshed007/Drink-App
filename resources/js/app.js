@@ -91,7 +91,6 @@ updateStatus(order);
 
 // Socket
 let socket = io()
-initAdmin(socket)
 // join
 if (order) {
     socket.emit('join', `order_${order._id}`)
@@ -99,9 +98,10 @@ if (order) {
 
 // For Admin page
 const adminPath=window.location.pathname;
-console.log(adminPath)
+
 
 if(adminPath.includes('admin')){
+    initAdmin(socket)
     socket.emit('join','adminRoom')
 }
 
@@ -118,6 +118,8 @@ socket.on('orderupdated', (data) => {
 
     }).show();
 })
+
+
 
 
 

@@ -1,6 +1,6 @@
 <section class="cart py-16">
     <% if(session.cart) {%>
-        <div class="order container mx-auto w-1/2">
+        <div class="order container mx-auto xl:w-1/2">
             <div class="flex items-center border-b border-gray-300 pb-4">
                 <img class="w-6" src="/img/cart.png" alt="">
                 <h1 class="font-bold ml-4 text-2xl">Order Summary</h1>
@@ -8,7 +8,6 @@
             <div class="drink-list">
                 <% for (let drink of Object.values(session.cart.items)) { %>
                     <div class="flex items-center my-8">
-
                         <img class="w-24" src="/img/<%=drink.item.image%>" alt="">
                         <div class=" flex-1 ml-4">
                             <h1>
@@ -18,7 +17,7 @@
                                 <%=drink.item.special%>
                             </span>
                         </div>
-                        <span class="flex-1">
+                        <span class="flex-1 ml-5">
                             <%=drink.qty%>Pcs
                         </span>
                         <span class="font-bold text-lg">₹<%=drink.item.price * drink.qty %></span>

@@ -51,7 +51,11 @@ function orderController() {
                 return res.render('customers/singleorder', { order: order })
             }
             return res.redirect('/');
+        },
+        async profile(req,res){
+            return res.render('customers/profile');
         }
+
     }
 }
 

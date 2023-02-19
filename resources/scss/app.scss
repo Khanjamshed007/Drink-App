@@ -10,9 +10,10 @@
 body {
     font-family: "Lato", sans-serif;
     color: $dark;
+    width: 100%;
 }
 
-nav li:last-child a {
+.nav-list ul a.cart{
     background: $primary;
     &:hover {
         background: $primary-hover;
@@ -94,6 +95,7 @@ section.cart {
     border-radius: 50px !important;
     padding-left: 8px !important;
     font-weight: bold !important;
+    background-color: $primary !important;
 }
 // .input .error{
 //     color: #ff3860;
@@ -113,22 +115,22 @@ section.status {
     background: $secondary;
     min-height: 90vh;
 }
-.status-box{
+.status-box {
     padding: 60px 0 0;
 }
 
-.status-box ul{
+.status-box ul {
     margin-left: 84px;
 }
 
-.status-box ul li span{
+.status-box ul li span {
     position: relative;
     padding-left: 20px;
 }
 
 // Dots
-.status-box ul li span::after{
-    content: '';
+.status-box ul li span::after {
+    content: "";
     position: absolute;
     left: -10px;
     top: 50%;
@@ -137,12 +139,12 @@ section.status {
     height: 10px;
     border-radius: 50px;
     transform: translateY(-5px);
-    box-shadow:0 0 1px 10px $secondary;
+    box-shadow: 0 0 1px 10px $secondary;
 }
 
 // Icons
-.status-box ul li span::before{
-    font-family: 'Line Awesome Free';
+.status-box ul li span::before {
+    font-family: "Line Awesome Free";
     font-size: 46px;
     font-weight: 600;
     position: absolute;
@@ -151,28 +153,28 @@ section.status {
     transform: translateY(-50%);
     color: inherit;
 }
-.status-box ul li:nth-child(1) span::before{
-    content: '\f46c';
+.status-box ul li:nth-child(1) span::before {
+    content: "\f46c";
 }
-.status-box ul li:nth-child(2) span::before{
-    content: '\f560';
+.status-box ul li:nth-child(2) span::before {
+    content: "\f560";
 }
-.status-box ul li:nth-child(3) span::before{
-    content: '\f818';
+.status-box ul li:nth-child(3) span::before {
+    content: "\f818";
 }
-.status-box ul li:nth-child(4) span::before{
-    content: '\f0d1';
+.status-box ul li:nth-child(4) span::before {
+    content: "\f0d1";
 }
-.status-box ul li:nth-child(5) span::before{
-    content: '\f5b8';
+.status-box ul li:nth-child(5) span::before {
+    content: "\f5b8";
 }
 
 // lines
-.status-box ul li{
+.status-box ul li {
     position: relative;
 }
-.status-box ul li:before{
-    content: '';
+.status-box ul li:before {
+    content: "";
     position: absolute;
     top: 0;
     left: -6px;
@@ -183,35 +185,141 @@ section.status {
 }
 
 // last dot
-.status-box ul li:nth-child(5) span:after{
+.status-box ul li:nth-child(5) span:after {
     box-shadow: 0 20px 1px 20px $secondary;
 }
 
 // lines
-.status-box ul li.step-completed:before{
+.status-box ul li.step-completed:before {
     background: $grey;
 }
 
 // dots
-.status-box ul li.step-completed span:after{
+.status-box ul li.step-completed span:after {
     background: $grey;
 }
 
 //text
-.status-box ul li.step-completed span{
+.status-box ul li.step-completed span {
     color: $grey;
 }
 
 // current status
-.status-box ul li.current-status span{
+.status-box ul li.current-status span {
     color: $primary-hover;
 }
-.status-box ul li.current-status span:after{
+.status-box ul li.current-status span:after {
     background: $primary-hover;
 }
 
-.status-box ul li small{
+.status-box ul li small {
     float: right;
     font-size: 18px;
     margin-top: 6px;
+}
+
+//Profile
+.profile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 40%;
+background: $grey;
+    margin: auto;
+    margin-top: 3rem;
+    gap: 1rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+    p{
+        background: rgb(124, 124, 235);
+        height: 3rem;
+        width: 70%;
+        padding-left: 1rem;
+        padding-top: 0.7rem;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+    button{
+        background: rgb(60, 60, 242);
+        padding: 0.8rem;
+        font-size: 15px;
+        font-weight: 900;
+        border-radius: 20px;
+
+        &:hover{
+            background: $primary;
+            transform: scaleX(1.2);
+            transition: $smooth;
+        }
+    }
+}
+
+.not{
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    margin-top: 10rem;
+
+    h1{
+        font-weight: 900;
+    }
+
+    strong{
+        position: relative;
+        left: 85px;
+        color: red;
+        font-size: 45px;
+    }
+}
+
+// Media Queries
+@media (max-width: 1000px) {
+    .container {
+        max-width: 90%;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .status-box ul li small {
+        font-size: 15px;
+        margin-top: 4px;
+    }
+}
+@media (max-width: 768px) {
+    .container .img img {
+        width: 50px;
+    }
+    .container h3 {
+        font-size: 13px;
+    }
+    .nav-list ul li {
+        font-size: 13px;
+        margin-left: 1em;
+    }
+    .nav-list ul li .cart img {
+        margin-left: -6px;
+    }
+    nav li:last-child a {
+        width: 55px;
+    }
+
+    .status-box ul li span::before {
+        font-size: 35px;
+        left: -75px;
+    }
+    .status-box ul li small {
+        font-size: 12px;
+        margin-top: 2px;
+    }
+}
+
+@media (max-width: 530px) {
+    .nav-list ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
 }

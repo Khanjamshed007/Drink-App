@@ -5,6 +5,7 @@ const authController=require('../app/http/controllers/authController');
 // Customer Controllers
 const cartController=require('../app/http/controllers/customer/cartController');
 const orderController=require('../app/http/controllers/customer/orderController');
+const updateController=require('../app/http/controllers/customer/updateController')
 
 // Admin Controller
 const AdminOrderController=require('../app/http/controllers/admin/ordercontroller');
@@ -40,6 +41,7 @@ app.post('/logout',authController().logout);
 // Rendering cart page
 app.get('/cart',cartController().index);
 app.post('/update-cart',cartController().update);
+// app.post('/delete',cartController().delete);
 
 
 
@@ -48,6 +50,7 @@ app.post('/update-cart',cartController().update);
 // Rendering the order page
 app.post('/order',auth,orderController().store);
 app.get('/customer/order',auth,orderController().index);
+app.get('/customer/profile',auth,updateController().profile);
 app.get('/customer/order/:id',auth,orderController().showStatus);
 
 

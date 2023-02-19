@@ -14,8 +14,7 @@ const Emitter = require('events');
 
 // Database Connection
 mongoose.set('strictQuery', true);
-const url = 'mongodb://localhost/Drink';
-mongoose.connect(url, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGO_CONNECTION_URL, { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('Database Connected...');
@@ -76,6 +75,9 @@ app.set('view engine', 'ejs');
 
 // set the routes
 require('./routes/web')(app)
+app.use((req,res)=>{
+    res.status(404).render('error/404')
+})
 
 // Running the server on port
 const server = app.listen(port, () => {
